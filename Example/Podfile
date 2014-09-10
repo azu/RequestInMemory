@@ -1,0 +1,9 @@
+target 'RequestInMemory', :exclusive => true do
+  pod "RequestInMemory", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "RequestInMemory", :path => "../"
+
+  pod 'Kiwi'
+end
