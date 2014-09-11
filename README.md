@@ -5,11 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/RequestInMemory.svg?style=flat)](http://cocoadocs.org/docsets/RequestInMemory)
 [![Platform](https://img.shields.io/cocoapods/p/RequestInMemory.svg?style=flat)](http://cocoadocs.org/docsets/RequestInMemory)
 
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+Once a fetch, does query request as many times as you wants.
 
 ## Installation
 
@@ -18,11 +14,48 @@ it, simply add the following line to your Podfile:
 
     pod "RequestInMemory"
 
-## Author
+## Usage
 
-azu, azuciao@gmail.com
+```objc
+@interface RequestInMemory : NSObject
+// initialize class + fetch data from CoreData
++ (instancetype)memoryEntityDescription:(NSEntityDescription *) entityDescription context:(NSManagedObjectContext *) managedObjectContext;
+
+#pragma mark - manually
+
+// manually update internal database
+// when initialize the class, automatically call this method.
+- (NSArray *)fetchAll;
+
+#pragma mark - filter helper
+
+- (BOOL)testPredicate:(NSPredicate *) predicate;
+
+- (NSArray *)findFirstPredicate:(NSPredicate *) predicate;
+
+- (NSArray *)findAllPredicate:(NSPredicate *) predicate;
+
+@end
+```
+
+### Background
+
+First `RequestInMemory` fetch ALL data only once.
+
+You can does query request without having to access the CoreData next time.
+
+## Requirements
+
+- CoreData
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## License
 
-RequestInMemory is available under the MIT license. See the LICENSE file for more info.
-
+MIT

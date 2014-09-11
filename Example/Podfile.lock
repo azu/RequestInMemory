@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi (2.3.0)
+  - RequestInMemory (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - RequestInMemory (from `../`)
+
+EXTERNAL SOURCES:
+  RequestInMemory:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
+  RequestInMemory: 510e980b0378b0d940eadadec6e0adc5d7eeb1ac
+
+COCOAPODS: 0.33.1
