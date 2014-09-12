@@ -97,6 +97,8 @@ Total Runtime performRequestInMemory: 0.956278 s
 
 `RequestInMemory` fetch ALL data.  In other words, `RequestInMemory` is memory-hogging.
 
+Not effective, but simple. (Welcome to Pull Requests! more effective way!)
+
 ## Requirements
 
 - CoreData
