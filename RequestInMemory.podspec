@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RequestInMemory"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "[CoreData] Once a fetch, does query request as many times as you wants."
   s.homepage         = "https://github.com/azu/RequestInMemory"
   s.license          = 'MIT'
