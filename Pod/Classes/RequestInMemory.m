@@ -48,7 +48,6 @@
     if (error) {
         NSLog(@"fetchWithPredicate: Error = %@", error);
     }
-    NSLog(@"results = %d", results.count);
     return results;
 }
 
