@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class RequestInMemory;
+
 @interface AZViewController : UIViewController
 
 @end

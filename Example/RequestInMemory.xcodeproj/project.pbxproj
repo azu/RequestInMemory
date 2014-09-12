@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B5C10FE422182619AFB79C /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C331B1A9B4BCDBDE13FF /* Model.xcdatamodel */; };
+		17B5C86A226726A00BA46863 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA5370F1236D29FF45A4 /* Person.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 		0000DCE843605F2576651B59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		05C5FEC0F915C38B10D12BDF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		08D14DE932CD4C609E3C5F9C /* Pods-RequestInMemory.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RequestInMemory.xcconfig"; path = "Pods/Pods-RequestInMemory.xcconfig"; sourceTree = "<group>"; };
+		17B5C331B1A9B4BCDBDE13FF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		17B5CA5370F1236D29FF45A4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		17B5CB670CA1B964E2E576FE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* RequestInMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RequestInMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B5C9B3543F50EABEA2D923 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				17B5CA5370F1236D29FF45A4 /* Person.m */,
+				17B5C331B1A9B4BCDBDE13FF /* Model.xcdatamodel */,
+				17B5CB670CA1B964E2E576FE /* Person.h */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +152,7 @@
 				6003F5A6195388D20070C39A /* AZViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				17B5C9B3543F50EABEA2D923 /* CoreData */,
 			);
 			path = RequestInMemory;
 			sourceTree = "<group>";
@@ -350,6 +366,8 @@
 				6003F59E195388D20070C39A /* AZAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* AZViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				17B5C86A226726A00BA46863 /* Person.m in Sources */,
+				17B5C10FE422182619AFB79C /* Model.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +507,7 @@
 				GCC_PREFIX_HEADER = "RequestInMemory/RequestInMemory-Prefix.pch";
 				INFOPLIST_FILE = "RequestInMemory/RequestInMemory-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -503,6 +522,7 @@
 				GCC_PREFIX_HEADER = "RequestInMemory/RequestInMemory-Prefix.pch";
 				INFOPLIST_FILE = "RequestInMemory/RequestInMemory-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

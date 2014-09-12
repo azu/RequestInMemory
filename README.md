@@ -44,6 +44,59 @@ First `RequestInMemory` fetch ALL data only once.
 
 You can does query request without having to access the CoreData next time.
 
+### Bench
+
+You try to `pod try RequestInMemory`
+
+
+```objc
+- (void)viewDidAppear:(BOOL) animated {
+    [super viewDidAppear:animated];
+    CFTimeInterval startTime = CACurrentMediaTime();
+    {
+        for (size_t i = 0; i < 1000; i++) {
+            @autoreleasepool {
+                [self performCoreData];
+            }
+        }
+    }
+    CFTimeInterval endTime = CACurrentMediaTime();
+    NSLog(@"Total Runtime performCoreData: %g s", endTime - startTime);
+    CFTimeInterval startTime_b = CACurrentMediaTime();
+    {
+        self.personInMemory = [RequestInMemory memoryEntityDescription:[Person MR_entityDescription] context:[NSManagedObjectContext MR_defaultContext]];
+        for (size_t i = 0; i < 1000; i++) {
+            @autoreleasepool {
+                [self performRequestInMemory];
+            }
+        }
+    }
+    CFTimeInterval endTime_b = CACurrentMediaTime();
+    NSLog(@"Total Runtime performRequestInMemory: %g s", endTime_b - startTime_b);
+}
+
+- (void)performRequestInMemory {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %d", @"age", 10];
+    [self.personInMemory findFirstPredicate:predicate];
+}
+
+- (void)performCoreData {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %d", @"age", 10];
+    [Person MR_findFirstWithPredicate:predicate];
+}
+```
+
+Result:
+
+```
+Total Runtime performCoreData: 1.53506 s
+Total Runtime performRequestInMemory: 0.956278 s
+```
+
+### Caution
+
+`RequestInMemory` fetch ALL data.  In other words, `RequestInMemory` is memory-hogging.
+
 ## Requirements
 
 - CoreData

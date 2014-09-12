@@ -1,5 +1,8 @@
 target 'RequestInMemory', :exclusive => true do
   pod "RequestInMemory", :path => "../"
+  pod 'MagicalRecord', '~> 2.2'
+  pod "AKUTestKit"
+
 end
 
 target 'Tests', :exclusive => true do
