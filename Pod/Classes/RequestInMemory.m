@@ -22,26 +22,46 @@
     return fetchRequestMemory;
 }
 
++ (instancetype)memoryEntityDescription:(NSEntityDescription *) entityDescription predicate:(NSPredicate *) predicate context:(NSManagedObjectContext *) managedObjectContext {
+    RequestInMemory *fetchRequestMemory = [[self alloc] init];
+    fetchRequestMemory.targetEntityDescription = entityDescription;
+    fetchRequestMemory.managedContext = managedObjectContext;
+    fetchRequestMemory.fetchedContents = [fetchRequestMemory fetchWithPredicate:predicate];
+    return fetchRequestMemory;
+}
+
 - (NSArray *)fetchAll {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:self.targetEntityDescription.name];
     NSError *error = nil;
     NSArray *results = [self.managedContext executeFetchRequest:request error:&error];
     if (error) {
-        NSLog(@"results = %@", results);
+        NSLog(@"fetchAll: Error = %@", error);
     }
     return results;
 }
 
-- (BOOL)testPredicate:(NSPredicate *) predicate {
+- (NSArray *)fetchWithPredicate:(NSPredicate *) predicate {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:self.targetEntityDescription.name];
+    [request setPredicate:predicate];
+    NSError *error = nil;
+    NSArray *results = [self.managedContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"fetchWithPredicate: Error = %@", error);
+    }
+    NSLog(@"results = %d", results.count);
+    return results;
+}
+
+- (BOOL)testWithPredicate:(NSPredicate *) predicate {
     NSArray *results = [self.fetchedContents filteredArrayUsingPredicate:predicate];
     return results.count > 0;
 }
 
-- (NSArray *)findAllPredicate:(NSPredicate *) predicate {
+- (NSArray *)findWithAllPredicate:(NSPredicate *) predicate {
     return [self.fetchedContents filteredArrayUsingPredicate:predicate];
 }
 
-- (NSArray *)findFirstPredicate:(NSPredicate *) predicate {
+- (NSArray *)findWithFirstPredicate:(NSPredicate *) predicate {
     NSArray *array = [self.fetchedContents filteredArrayUsingPredicate:predicate];
     if (array.count > 0) {
         return [array firstObject];

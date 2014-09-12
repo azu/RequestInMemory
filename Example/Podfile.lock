@@ -2,7 +2,7 @@ PODS:
   - AKUTestKit (1.0.1)
   - Kiwi (2.3.0)
   - MagicalRecord (2.2)
-  - RequestInMemory (0.1.0)
+  - RequestInMemory (1.0.1)
 
 DEPENDENCIES:
   - AKUTestKit
@@ -18,6 +18,6 @@ SPEC CHECKSUMS:
   AKUTestKit: 9da989c896bce2ff680a0457273150ef186b08d8
   Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
-  RequestInMemory: 37b1b05c44374d45ba999654b9695c4b3c69ca1d
+  RequestInMemory: 53696cb93d97f321217f91ea4fdb5437997af42f
 
 COCOAPODS: 0.33.1
