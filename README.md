@@ -16,16 +16,10 @@ it, simply add the following line to your Podfile:
 ## Usage
 
 ```objc
-//
-// Created by azu on 2014/09/08.
-//
-
-
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
 // fetch all -> filter by predicate
 @interface RequestInMemory : NSObject
+@property(nonatomic, strong) NSArray *fetchedContents;
+
 // initialize class + fetch data from CoreData
 + (instancetype)memoryEntityDescription:(NSEntityDescription *) entityDescription context:(NSManagedObjectContext *) managedObjectContext;
 
@@ -44,9 +38,9 @@ it, simply add the following line to your Podfile:
 
 - (BOOL)testWithPredicate:(NSPredicate *) predicate;
 
-- (NSArray *)findWithFirstPredicate:(NSPredicate *) predicate;
+- (NSArray *)findFirstWithPredicate:(NSPredicate *) predicate;
 
-- (NSArray *)findWithAllPredicate:(NSPredicate *) predicate;
+- (NSArray *)findAllWithPredicate:(NSPredicate *) predicate;
 
 @end
 ```
