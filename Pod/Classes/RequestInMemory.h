@@ -26,8 +26,8 @@
 
 - (BOOL)testWithPredicate:(NSPredicate *) predicate;
 
-- (NSArray *)findWithFirstPredicate:(NSPredicate *) predicate;
+- (NSArray *)findFirstWithPredicate:(NSPredicate *) predicate;
 
-- (NSArray *)findWithAllPredicate:(NSPredicate *) predicate;
+- (NSArray *)findAllWithPredicate:(NSPredicate *) predicate;
 
 @end

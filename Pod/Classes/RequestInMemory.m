@@ -56,11 +56,11 @@
     return results.count > 0;
 }
 
-- (NSArray *)findWithAllPredicate:(NSPredicate *) predicate {
+- (NSArray *)findAllWithPredicate:(NSPredicate *) predicate {
     return [self.fetchedContents filteredArrayUsingPredicate:predicate];
 }
 
-- (NSArray *)findWithFirstPredicate:(NSPredicate *) predicate {
+- (NSArray *)findFirstWithPredicate:(NSPredicate *) predicate {
     NSArray *array = [self.fetchedContents filteredArrayUsingPredicate:predicate];
     if (array.count > 0) {
         return [array firstObject];

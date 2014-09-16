@@ -64,7 +64,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
 
 - (void)performRequestInMemory {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %d", @"age", 10];
-    [self.personInMemory findWithFirstPredicate:predicate];
+    [self.personInMemory findFirstWithPredicate:predicate];
 }
 
 - (void)performCoreData {
