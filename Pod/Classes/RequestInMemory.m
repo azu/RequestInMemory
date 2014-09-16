@@ -8,7 +8,6 @@
 @interface RequestInMemory ()
 @property(nonatomic, strong) NSEntityDescription *targetEntityDescription;
 @property(nonatomic, strong) NSManagedObjectContext *managedContext;
-@property(nonatomic, strong) NSArray *fetchedContents;
 @end
 
 @implementation RequestInMemory {

@@ -8,6 +8,8 @@
 
 // fetch all -> filter by predicate
 @interface RequestInMemory : NSObject
+@property(nonatomic, strong) NSArray *fetchedContents;
+
 // initialize class + fetch data from CoreData
 + (instancetype)memoryEntityDescription:(NSEntityDescription *) entityDescription context:(NSManagedObjectContext *) managedObjectContext;
 
